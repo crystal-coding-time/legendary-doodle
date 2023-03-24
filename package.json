@@ -1,0 +1,24 @@
+{
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "description": "This is an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crystal-coding-time/legendary-doodle.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crystal-coding-time/legendary-doodle/issues"
+  },
+  "homepage": "https://github.com/crystal-coding-time/legendary-doodle#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.9.2"
+  }
+}
