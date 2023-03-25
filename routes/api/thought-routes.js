@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const {
-  getAllThought,
+  getAllThoughts,
   getThoughtById,
   createThought,
   updateThought,
@@ -10,7 +10,7 @@ const {
 } = require("../../controllers/thought-controller");
 
 // api/thoughts
-router.route("/").get(getAllThought).post(createThought);
+router.route("/").get(getAllThoughts).post(createThought);
 
 // function getAllThought(req, res) {
 //   // code to retrieve all thoughts
