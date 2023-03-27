@@ -45,15 +45,16 @@ const thoughtController = {
   createThought({ params, body }, res) {
     // Create a new thought with the given data
     Thought.create(body)
-      .then(({ _id }) => {
+      .then((dbThoughtData) => {
         // Add the created thought's _id to the associated user's thoughts array field
         return User.findOneAndUpdate(
-          { _id: body.userId },
-          { $push: { thoughts: _id } },
+          { username: dbThoughtData.username },
+          { $push: { thoughts: dbThoughtData._id } },
           { new: true }
         );
       })
       .then((dbUserData) => {
+        console.log(dbUserData);
         if (!dbUserData) {
           return res
             .status(404)

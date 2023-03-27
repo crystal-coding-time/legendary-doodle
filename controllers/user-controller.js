@@ -1,9 +1,9 @@
 // import the User and Thought models
 const { User, Thought } = require("../models");
 
-// define an object with controller functions for each CRUD operation
+// Define an object with controller functions for each CRUD operation
 const userController = {
-  // get all users
+  // Get all users
   getAllUser(req, res) {
     User.find({})
       .populate({
@@ -19,18 +19,18 @@ const userController = {
       });
   },
 
-  // get one user by id
+  // Get one user by id
   getUserById({ params }, res) {
     User.findOne({ _id: params.id })
       .populate({
         path: "thoughts",
-        select: "-__v", // exclude the version field from thought documents
+        select: "-__v", // Exclude the version field from thought documents
       })
       .populate({
         path: "friends",
-        select: "-__v", // exclude the version field from friend documents
+        select: "-__v", // Exclude the version field from friend documents
       })
-      .select("-__v") // exclude the version field from user documents
+      .select("-__v") // Exclude the version field from user documents
       .then((dbUserData) => {
         if (!dbUserData) {
           return res
